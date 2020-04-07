@@ -5,14 +5,13 @@ on:
     branches: 
       - '*'         # matches every branch
       - '*/*'       # matches every branch containing a single '/'
-      - '!master'   # excludes master
   pull_request:
     branches:
       - '*'         # matches every branch
       - '*/*'       # matches every branch containing a single '/'
 
 jobs:
-  build:
+  ci:
 
     runs-on: ubuntu-latest
 
