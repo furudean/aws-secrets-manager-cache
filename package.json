@@ -1,0 +1,40 @@
+{
+  "name": "aws-secrets-manager-cache",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "Cassidy Bandy",
+  "homepage": "https://github.com/c-bandy/aws-secrets-manager-cache#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-bandy/aws-secrets-manager-cache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/c-bandy/aws-secrets-manager-cache/issues"
+  },
+  "keywords": [
+    "aws-sdk",
+    "secretsmanager"
+  ],
+  "license": "Unlicense",
+  "peerDependencies": {
+    "aws-sdk": "^2.x"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.0",
+    "@types/sinon": "^9.0.0",
+    "aws-sdk": "^2.654.0",
+    "aws-sdk-mock": "^5.1.0",
+    "jest": "^25.2.7",
+    "jest-date-mock": "^1.0.8",
+    "sinon": "^9.0.1",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {}
+}
