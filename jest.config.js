@@ -7,6 +7,6 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ['src/**'],
-  coverageReporters: ['text', 'html'],
+  coverageReporters: ['text', 'html', 'lcov'],
   setupFiles: ['jest-date-mock'],
 };
