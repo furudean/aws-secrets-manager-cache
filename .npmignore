@@ -2,3 +2,5 @@
 !dist/
 !package.json
 !UNLICENSE
+!README.md
+!CHANGELOG.md
