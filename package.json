@@ -9,8 +9,7 @@
     "prebuild": "npm run clean",
     "build": "tsc -p tsconfig.json",
     "postbuild": "copyfiles -u 2 \"./build/src/*.*\" ./dist/",
-    "commit": "commit",
-    "semantic-release": "semantic-release"
+    "release": "standard-version"
   },
   "author": "Cassidy Bandy",
   "homepage": "https://github.com/c-bandy/aws-secrets-manager-cache#readme",
@@ -30,10 +29,6 @@
     "aws-sdk": "^2.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@commitlint/prompt-cli": "^8.3.5",
-    "@semantic-release/npm": "^7.0.5",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
     "@types/sinon": "^9.0.0",
@@ -43,8 +38,8 @@
     "jest": "^25.2.7",
     "jest-date-mock": "^1.0.8",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.0.4",
     "sinon": "^9.0.1",
+    "standard-version": "^7.1.0",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
   },
