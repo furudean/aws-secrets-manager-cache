@@ -3,9 +3,9 @@ import { SecretsManager } from 'aws-sdk';
 const defaultTTL = (5 * 60 * 1000); // 5 minutes
 
 export class CachedSecret {
-  public value: string;
-  public ttl: number;
-  public expiresAt: number;
+  public readonly value: string;
+  public readonly ttl: number;
+  public readonly expiresAt: number;
 
   constructor(value: string, ttl: number) {
     this.value = value;
@@ -34,7 +34,7 @@ export class SecretsManagerCache {
   public config: SecretsManagerCacheConfig;
   private cache = new Map<string, CachedSecret>()
 
-  constructor (options?: SecretsManagerCacheOptions) {
+  constructor(options?: SecretsManagerCacheOptions) {
     this.config = {
       // set defaults
       ttl: defaultTTL,
@@ -48,7 +48,7 @@ export class SecretsManagerCache {
    * Fetches a secret from SecretsManager and caches it as long as the given
    * `ttl`.
    */
-  async getSecretString(secretName: string): Promise<string | undefined> {
+  async getSecret(secretName: string, isJSON = false): Promise<string | undefined> {
     const itemExistsInCache = this.cache.has(secretName);
     const itemHasExpired = this.cache.get(secretName)?.hasExpired();
 
@@ -68,6 +68,17 @@ export class SecretsManagerCache {
       }
     }
 
-    return this.cache.get(secretName)?.value;
+    const secret = this.cache.get(secretName)?.value;
+
+    if (isJSON) {
+      try {
+        return JSON.parse(secret as any);
+      } catch (error) {
+        throw new Error('Attempted to parse non-JSON secret string as JSON.')
+       }
+    }
+
+    return secret;
   }
+
 }
