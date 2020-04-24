@@ -9,6 +9,7 @@
     "prebuild": "npm run clean",
     "build": "tsc -p tsconfig.json",
     "postbuild": "copyfiles -u 2 \"./build/src/*.*\" ./dist/",
+    "prepublishOnly": "npm test && npm run build",
     "release": "standard-version"
   },
   "author": "Cassidy Bandy",
