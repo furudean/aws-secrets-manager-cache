@@ -30,7 +30,7 @@ try {
     const helper = new SecretsManagerCache();
     const secretJson = await helper.getSecret('secret-value', true);
 } catch (error) {
-    console.log(error.message;)
+    console.log(error.message);
 }
 ```
 
