@@ -30,7 +30,7 @@
     "aws-sdk": "^2.x"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.1",
+    "@types/jest": "^26.0.12",
     "@types/node": "^14.0.12",
     "@types/sinon": "^9.0.0",
     "aws-sdk": "^2.654.0",
